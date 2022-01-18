@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6430143887018964564}
   - component: {fileID: 6430143887018964565}
   - component: {fileID: -1918672686112144869}
-  m_Layer: 0
+  - component: {fileID: 1820841423137806276}
+  m_Layer: 8
   m_Name: GreenZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,3 +139,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1820841423137806276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430143887018964567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83df7d018456e0a450d60315580dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 6430143887018964565}
+  rb: {fileID: -1918672686112144869}
+  movementSpeed: 10
+  hasLanded: 0

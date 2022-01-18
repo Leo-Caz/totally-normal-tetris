@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8730420671932215964}
   - component: {fileID: 8730420671932215967}
   - component: {fileID: -5880182642754374920}
-  m_Layer: 0
+  - component: {fileID: -4068848312010125746}
+  m_Layer: 8
   m_Name: LongBoi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,3 +138,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4068848312010125746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730420671932215905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b83df7d018456e0a450d60315580dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 8730420671932215967}
+  rb: {fileID: -5880182642754374920}
+  movementSpeed: 10
+  hasLanded: 0
