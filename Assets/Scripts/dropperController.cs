@@ -7,6 +7,7 @@ public class dropperController: MonoBehaviour
 {
 	private Object[] blocksPrefabs; // References to falling blocs (prefabs)
 	private List<GameObject> blockList;  // References to falling blocks (GameObjects)
+	public List<GameObject> blockSequence;  // stores the next blocs
 	private GameObject currentBlock;  // Reference to instance of last block spawned
 	private fallingBlocks currentBlockPropreties;  // Acces propreties of currentBlock
 
@@ -14,9 +15,12 @@ public class dropperController: MonoBehaviour
 
     void createBlock() {
 		// Create an instance of the prefab and keep a reference to this instance
-		int i = Random.Range(0, blockList.Count);
-		currentBlock = Instantiate(blockList[i], transform.position, Quaternion.identity);
+		currentBlock = Instantiate(blockSequence[0], transform.position, Quaternion.identity);
 		currentBlockPropreties = currentBlock.GetComponent<fallingBlocks>();
+
+		blockSequence.RemoveAt(0);
+		int blockId = Random.Range(0, blockList.Count);
+		blockSequence.Add(blockList[blockId]);
     }
 
     // Start is called before the first frame update
@@ -25,6 +29,13 @@ public class dropperController: MonoBehaviour
 		string blocksPath = "Prefabs/Blocks";
 		blocksPrefabs = Resources.LoadAll(blocksPath);
 		blockList = blocksPrefabs.Cast<GameObject>().ToList();
+
+		int sequenceLength = 4;  // Number of blocks shown in advance
+		for (int i = 0; i < sequenceLength; i++) {
+			int blockId = Random.Range(0, blockList.Count);
+			blockSequence.Add(blockList[blockId]);
+		}
+
 		createBlock();
 	}
 
