@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bloc_script : MonoBehaviour
+public class fallingBlocks : MonoBehaviour
 {
-	public PolygonCollider2D collider;
 	public Rigidbody2D rb;
 	public float movementSpeed = 10f;
 	public bool hasLanded = false;
